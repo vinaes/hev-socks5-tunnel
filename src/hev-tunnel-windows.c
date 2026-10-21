@@ -44,13 +44,13 @@ hev_pbuf_free (struct pbuf *p)
 }
 
 int
-hev_tunnel_open (const char *name, int multi_queue)
+hev_tunnel_open (const char *name, int multi_queue, const char *guid)
 {
     wintun = hev_wintun_open ();
     if (!wintun)
         return -1;
 
-    adapter = hev_wintun_adapter_create (name);
+    adapter = hev_wintun_adapter_create (name, guid);
     if (!adapter)
         goto free;
 
@@ -69,6 +69,17 @@ hev_tunnel_close (int fd)
         hev_wintun_session_stop (session);
     hev_wintun_adapter_close (adapter);
     hev_wintun_close (wintun);
+}
+
+void
+hev_tunnel_set_offload (int fd, int offload)
+{
+}
+
+int
+hev_tunnel_get_offload (void)
+{
+    return 0;
 }
 
 int

@@ -88,6 +88,8 @@ make shared
 tunnel:
   # Interface name
   name: tun0
+  # Interface GUID (Windows)
+# guid: 12345678-9abc-def0-1234-56789abcdef0
   # Interface MTU
   mtu: 8500
   # Multi-queue
@@ -98,6 +100,15 @@ tunnel:
   ipv6: 'fc00::1'
   # ICMP Echo mode (off|reply)
   icmp: 'off'
+  # Offloads (Linux), each one is used only if the kernel supports it
+# offload:
+    # TCP segmentation offload
+#   tso: true
+    # UDP segmentation offload
+#   uso: true
+    # Send TCP segments larger than the MTU without TSO, only for local
+    # delivery, disable it if the traffic is forwarded to other interfaces
+#   jumbo: true
   # Post up script
 # post-up-script: up.sh
   # Pre down script
@@ -436,6 +447,7 @@ still override `PKGNAME`/`CLSNAME` in `Application.mk` as shown above and build 
 
 * [SocksTun](https://github.com/heiher/sockstun)
 * [Orbot](https://github.com/guardianproject/orbot-android)
+* [EasyssTun](https://github.com/nange/EasyssTun)
 
 ### iOS
 
@@ -448,10 +460,13 @@ still override `PKGNAME`/`CLSNAME` in `Application.mk` as shown above and build 
 * **codewithtamim** - https://github.com/codewithtamim
 * **dovecoteescapee** - https://github.com/dovecoteescapee
 * **ebrahimtahernejad** - https://github.com/ebrahimtahernejad
+* **egavr** - https://github.com/egavr
 * **heiby** - https://github.com/heiby
 * **hev** - https://hev.cc
 * **ihipop** - https://ihipop.com
 * **katana** - https://github.com/officialkatana
+* **nange** - https://github.com/nange
+* **plangto** - https://github.com/plangto
 * **pronebird** - https://github.com/pronebird
 * **saeeddev94** - https://github.com/saeeddev94
 * **sskaje** - https://github.com/sskaje
